@@ -1,0 +1,12 @@
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\bin\Debug\PDFtoEPUB.exe
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\bin\Debug\PDFtoEPUB.pdb
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\obj\Debug\Window1.baml
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\obj\Debug\Window1.g.cs
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\obj\Debug\App.g.cs
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\obj\Debug\PDFtoEPUB_MarkupCompile.cache
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\obj\Debug\PDFtoEPUB.g.resources
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\obj\Debug\PDFtoEPUB.Properties.Resources.resources
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\obj\Debug\PDFtoEPUB.csproj.GenerateResource.Cache
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\obj\Debug\PDFtoEPUB.exe
+C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\PDFtoEPUB\obj\Debug\PDFtoEPUB.pdb
