@@ -1,9 +1,0 @@
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\EPUBConversionTester\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\EPUBConversionTester\bin\Debug\pdftohtml.exe
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\EPUBConversionTester\bin\Debug\EPUBConversionTester.dll
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\EPUBConversionTester\bin\Debug\EPUBConversionTester.pdb
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\EPUBConversionTester\bin\Debug\Crabwise.EPUBConversion.dll
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\EPUBConversionTester\bin\Debug\Crabwise.CommandWrap.Library.dll
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\EPUBConversionTester\bin\Debug\Crabwise.EPUBConversion.pdb
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\EPUBConversionTester\obj\Debug\EPUBConversionTester.dll
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\EPUBConversionTester\obj\Debug\EPUBConversionTester.pdb

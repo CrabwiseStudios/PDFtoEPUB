@@ -1,7 +1,0 @@
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\Crabwise.EPUBConversion\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\Crabwise.EPUBConversion\bin\Debug\pdftohtml.exe
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\Crabwise.EPUBConversion\bin\Debug\Crabwise.EPUBConversion.dll
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\Crabwise.EPUBConversion\bin\Debug\Crabwise.EPUBConversion.pdb
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\Crabwise.EPUBConversion\bin\Debug\Crabwise.CommandWrap.Library.dll
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\Crabwise.EPUBConversion\obj\Debug\Crabwise.EPUBConversion.dll
-C:\Users\TOM\Documents\Visual Studio 2008\Projects\PDFtoEPUB\Crabwise.EPUBConversion\obj\Debug\Crabwise.EPUBConversion.pdb
