@@ -5,7 +5,7 @@ namespace Crabwise.PDFtoEPUB.Commands
     using Crabwise.CommandWrap.Library;
 
     [CommandSyntax("pdftohtml.exe")]
-    public class pdfToHTMLCommand : Command
+    public class PdfToHtmlCommand : Command
     {
 
         [ParameterSyntax("-f {arg}")]

@@ -6,7 +6,7 @@ namespace Crabwise.PDFtoEPUB
     {
         public static string GenerateHTMLFromFile(string pdfFilePath)
         {
-            pdfToHTMLCommand cmd = new pdfToHTMLCommand();
+            PdfToHtmlCommand cmd = new PdfToHtmlCommand();
             cmd.PDFFileLocation = pdfFilePath;
             cmd.WriteToStdOut = true;
             cmd.ExchangePDFLinksByHTML = true;
