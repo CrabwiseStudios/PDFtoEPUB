@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Crabwise.EPUBConversion
+namespace Crabwise.PDFtoEPUB.Commands
 {
     using Crabwise.CommandWrap.Library;
-    using System.Collections.ObjectModel;
 
     [CommandSyntax("pdftohtml.exe")]
     public class pdfToHTMLCommand : Command
@@ -74,7 +70,7 @@ namespace Crabwise.EPUBConversion
             get;
             set;
         }
-        
+
         [ParameterSyntax("-stdout")]
         public bool? WriteToStdOut
         {
@@ -145,14 +141,14 @@ namespace Crabwise.EPUBConversion
             set;
         }
 
-        [ParameterSyntax("{arg}", Priority=3, Required=true)]
+        [ParameterSyntax("{arg}", Position = 1, Required = true)]
         public String PDFFileLocation
         {
             get;
             set;
         }
 
-        [ParameterSyntax("{arg}", Priority=2)]
+        [ParameterSyntax("{arg}", Position = 2)]
         public String OutputFileLocation
         {
             get;

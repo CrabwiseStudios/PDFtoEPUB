@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crabwise.PDFtoEPUB", "Crabwise.PDFtoEPUB\Crabwise.PDFtoEPUB.csproj", "{FDF35FA8-6A6E-48A5-853C-B736A1EB5D7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bin", "bin", "{B516A919-C390-4218-8DFC-42E84E41F778}"
+	ProjectSection(SolutionItems) = preProject
+		bin\Crabwise.CommandWrap.Library.dll = bin\Crabwise.CommandWrap.Library.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crabwise.PDFtoEPUB.UnitTests", "Crabwise.PDFtoEPUB.UnitTests\Crabwise.PDFtoEPUB.UnitTests.csproj", "{ACBF2306-7981-4527-A42D-119F3F88B500}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{16E06B1F-4482-4586-B939-027B36947211}"
+	ProjectSection(SolutionItems) = preProject
+		Crabwise.PDFtoEPUB.vsmdi = Crabwise.PDFtoEPUB.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Crabwise.PDFtoEPUB.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDF35FA8-6A6E-48A5-853C-B736A1EB5D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF35FA8-6A6E-48A5-853C-B736A1EB5D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF35FA8-6A6E-48A5-853C-B736A1EB5D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDF35FA8-6A6E-48A5-853C-B736A1EB5D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACBF2306-7981-4527-A42D-119F3F88B500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACBF2306-7981-4527-A42D-119F3F88B500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACBF2306-7981-4527-A42D-119F3F88B500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACBF2306-7981-4527-A42D-119F3F88B500}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

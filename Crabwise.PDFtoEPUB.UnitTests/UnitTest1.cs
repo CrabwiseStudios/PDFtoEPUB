@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Crabwise.EPUBConversion;
 
-namespace EPUBConversionTester
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Crabwise.PDFtoEPUB.UnitTests
 {
     /// <summary>
     /// Summary description for UnitTest1
@@ -63,7 +62,7 @@ namespace EPUBConversionTester
         [TestMethod]
         public void TestMethod1()
         {
-            string test = Crabwise.EPUBConversion.HtmlConversion.GenerateHTMLFromFile("yeppers.pdf");
+            string test = Crabwise.PDFtoEPUB.HtmlConversion.GenerateHTMLFromFile("yeppers.pdf");
             Console.WriteLine(test);
         }
     }

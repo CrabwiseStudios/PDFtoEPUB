@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EPUBConversionTester")]
+[assembly: AssemblyTitle("Crabwise.PDFtoEPUB.UnitTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("EPUBConversionTester")]
+[assembly: AssemblyProduct("Crabwise.PDFtoEPUB.UnitTests")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a3d99bc1-6c3f-4ae1-9d52-f8f715f1c553")]
+[assembly: Guid("1e4a0404-4c70-47c0-b480-0f21d5c5d60b")]
 
 // Version information for an assembly consists of the following four values:
 //

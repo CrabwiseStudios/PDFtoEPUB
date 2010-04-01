@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Crabwise.PDFtoEPUB.Commands;
 
-namespace Crabwise.EPUBConversion
+namespace Crabwise.PDFtoEPUB
 {
     public static class HtmlConversion
     {
