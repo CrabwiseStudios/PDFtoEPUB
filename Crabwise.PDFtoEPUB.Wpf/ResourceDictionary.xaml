@@ -1,0 +1,63 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DataTemplate x:Key="FileItemDataTemplate">
+        <StackPanel Orientation="Horizontal">
+            <Image Width="16" Height="16" x:Name="IconImage" Source="{Binding Path=Icon, IsAsync=True}" Margin="-24,0,0,0" />
+            <Label x:Name="FileNameLabel" ToolTip="{Binding Path=FullPath, IsAsync=True}" Margin="3" FontWeight="Normal">
+                <TextBlock Text="{Binding Path=Name, IsAsync=True}" TextTrimming="CharacterEllipsis" />
+            </Label>
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="BranchDataTemplate">
+        <TextBlock Text="{Binding Path=Name}" />
+    </DataTemplate>
+    <DataTemplate x:Key="LogItemDataTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock TextWrapping="Wrap" Margin="0,0,5,0" Text="{Binding Timestamp}"/>
+            <TextBlock TextWrapping="Wrap" Text="{Binding MessageSubject}"/>
+        </StackPanel>
+    </DataTemplate>
+    <ControlTemplate x:Key="FileListBoxControlTemplate" TargetType="{x:Type ListBox}">
+        <Border>
+            <ItemsPresenter />
+        </Border>
+    </ControlTemplate>
+    <Style x:Key="FileListBoxStyle" TargetType="{x:Type ListBox}">
+        <Style.Resources>
+            <!-- Selection color -->
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="White" />
+            <!-- Unfocused selection color -->
+            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="White" />
+        </Style.Resources>
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Margin" Value="40,0,0,0" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+        <Setter Property="Template" Value="{DynamicResource FileListBoxControlTemplate}" />
+        <Setter Property="ItemTemplate" Value="{DynamicResource FileItemDataTemplate}" />
+    </Style>
+    <Style x:Key="DefaultWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="Icon" Value="Images\Crab (32).png" />
+        <Setter Property="Height" Value="300" />
+        <Setter Property="Width" Value="700" />
+    </Style>
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="Height" Value="23" />
+    </Style>
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="75" />
+        <Setter Property="Height" Value="23" />
+    </Style>
+    <Style TargetType="{x:Type Label}">
+        <Setter Property="Height" Value="16" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+    <Style TargetType="{x:Type CheckBox}">
+        <Setter Property="Height" Value="17" />
+    </Style>
+    <Style TargetType="{x:Type RadioButton}">
+        <Setter Property="Height" Value="17" />
+    </Style>
+    <Style TargetType="{x:Type ComboBox}">
+        <Setter Property="Height" Value="23" />
+    </Style>
+</ResourceDictionary>
