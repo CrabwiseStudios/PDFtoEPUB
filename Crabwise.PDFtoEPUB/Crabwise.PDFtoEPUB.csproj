@@ -38,7 +38,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\pdfToHTMLCommand.cs" />
+    <Compile Include="Commands\PdfToHtmlCommand.cs" />
     <Compile Include="HtmlConversion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
