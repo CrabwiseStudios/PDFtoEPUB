@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{FDF35FA8-6A6E-48A5-853C-B736A1EB5D7E}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -35,11 +35,22 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Crabwise.CommandWrap.Library.dll</HintPath>
     </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Ionic.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\PdfToHtmlCommand.cs" />
+    <Compile Include="ConversionOptions.cs" />
+    <Compile Include="EPUBGenerator.cs" />
     <Compile Include="HtmlConversion.cs" />
+    <Compile Include="HtmlTransformation.cs" />
+    <Compile Include="MetadataGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
