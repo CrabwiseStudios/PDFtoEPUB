@@ -10,7 +10,7 @@ namespace Crabwise.PDFtoEPUB
             cmd.PDFFileLocation = pdfFilePath;
             cmd.WriteToStdOut = true;
             cmd.ExchangePDFLinksByHTML = true;
-            Crabwise.CommandWrap.Library.CommandStartInfo startinfo = new Crabwise.CommandWrap.Library.CommandStartInfo(new System.Diagnostics.ProcessStartInfo());
+            Crabwise.CommandWrap.CommandStartInfo startinfo = new Crabwise.CommandWrap.CommandStartInfo(new System.Diagnostics.ProcessStartInfo());
             startinfo.WorkingDirectory = System.IO.Directory.GetCurrentDirectory();
             startinfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             cmd.Execute(startinfo);
