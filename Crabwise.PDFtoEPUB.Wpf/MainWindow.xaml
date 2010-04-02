@@ -16,10 +16,10 @@
         </Grid.RowDefinitions>
         <Grid>
             <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0">Output folder:</Label>
-            <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="81,0,0,0" Width="350"></TextBox>
+            <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="81,0,0,0" Width="350" Text="{Binding OutputDirectory}" />
             <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="436,0,0,0" Command="{Binding BrowseButtonCommand}">Browse...</Button>
-            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,34,0,11">Add...</Button>
-            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,34,0,11">Remove</Button>
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,34,0,11" Command="{Binding AddButtonCommand}">Add...</Button>
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,34,0,11" Command="{Binding RemoveButtonCommand}">Remove</Button>
             <ProgressBar Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top" Height="15" Width="355" Margin="0,38,0,11"></ProgressBar>
         </Grid>
         <ListView Grid.Row="1">
