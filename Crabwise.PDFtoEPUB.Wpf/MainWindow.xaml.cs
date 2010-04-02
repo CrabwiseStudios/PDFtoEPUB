@@ -1,41 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Forms;
-using System.Collections.ObjectModel;
-using Microsoft.WindowsAPICodePack.Dialogs;
-using System.IO;
-
-namespace Crabwise.PDFtoEPUB.Wpf
+﻿namespace Crabwise.PDFtoEPUB.Wpf
 {
-    /// <summary>
-    /// Interaction logic for Window1.xaml
-    /// </summary>
+    using System;
+    using System.Collections.ObjectModel;
+    using System.Windows;
+    using System.Windows.Forms;
+    using System.Windows.Input;
+    using Microsoft.WindowsAPICodePack.Dialogs;
+
     public partial class MainWindow : Window
     {
-
-
-        public string OutputDirectory
-        {
-            get { return (string)GetValue(OutputDirectoryProperty); }
-            set { SetValue(OutputDirectoryProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for OutputDirectory.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty OutputDirectoryProperty =
-            DependencyProperty.Register("OutputDirectory", typeof(string), typeof(MainWindow), new UIPropertyMetadata(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)));
-
-
+        public static readonly DependencyProperty OutputDirectoryProperty = DependencyProperty.Register(
+            "OutputDirectory", typeof(string), typeof(MainWindow), new UIPropertyMetadata(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)));
 
         private readonly ICommand addButtonCommand;
         private readonly ICommand browseButtonCommand;
@@ -56,6 +31,12 @@ namespace Crabwise.PDFtoEPUB.Wpf
             {
                 return browseButtonCommand;
             }
+        }
+
+        public string OutputDirectory
+        {
+            get { return (string)GetValue(OutputDirectoryProperty); }
+            set { SetValue(OutputDirectoryProperty, value); }
         }
 
         public ICommand RemoveButtonCommand
@@ -163,11 +144,6 @@ namespace Crabwise.PDFtoEPUB.Wpf
 
         private void ExecuteRemove(object parameter)
         {
-        }
-
-        private void ShowFileDialog(string caption, bool folderPicker)
-        {
-
         }
     }
 }
