@@ -52,27 +52,14 @@ namespace Crabwise.PDFtoEPUB
 
             //ncx/navMap
             XmlElement navMap = tocxml.CreateElement("navMap");
+            
+            //title page
+            navMap.AppendChild(GenerateNavPoint(tocxml, "Title Page", 1, "title_page.xhtml"));
 
             foreach (Chapter chapter in options.Chapters)
             {
-                //ncx/navMap/navPoint
-                XmlElement navPoint = tocxml.CreateElement("navPoint");
-                navPoint.SetAttribute("id", chapter.ChapterTitle);
-                navPoint.SetAttribute("playOrder", chapter.ChapterNumber.ToString());
-
-                //ncx/navMap/navPoint/navLabel
-                XmlElement navLabel = tocxml.CreateElement("navLabel");
-                navLabel.InnerXml = String.Format("<text>{0}</text>");
-
-                //ncx/navMap/navPoint/content
-                XmlElement content = tocxml.CreateElement("content");
-                content.SetAttribute("src", chapter.EmbeddedTitle);
-
-                //append the navLabel element and the content element to the navPoint element for the chapter
-                navPoint.AppendChild((XmlNode)navLabel).AppendChild((XmlNode)content);
-                
-                //apend the navPoint of the chapter to the navMap
-                navMap.AppendChild((XmlNode)navPoint);
+                //need the +1 because the title page isn't included in the chapter list
+                navMap.AppendChild(GenerateNavPoint(tocxml, chapter.ChapterTitle, chapter.ChapterNumber + 1, chapter.EmbeddedTitle));
             }
 
             //append the navMap to ncx, the root element
@@ -80,6 +67,28 @@ namespace Crabwise.PDFtoEPUB
 
             //return the xml in UTF8 encoding
             return System.Text.Encoding.UTF8.GetBytes(tocxml.ToString());
+        }
+
+        static XmlNode GenerateNavPoint(XmlDocument ParentXmlDoc, string Title, int PlayOrder, string ContentSrc)
+        {
+            //ncx/navMap/navPoint
+            XmlElement navPoint = ParentXmlDoc.CreateElement("navPoint");
+            navPoint.SetAttribute("id", Title.ToLower());
+            navPoint.SetAttribute("playOrder", PlayOrder.ToString());
+
+            //ncx/navMap/navPoint/navLabel
+            XmlElement navLabel = ParentXmlDoc.CreateElement("navLabel");
+            navLabel.InnerXml = String.Format("<text>{0}</text>", Title);
+
+            //ncx/navMap/navPoint/content
+            XmlElement content = ParentXmlDoc.CreateElement("content");
+            content.SetAttribute("src", ContentSrc);
+
+            //append the navLabel element and the content element to the navPoint element for the chapter
+            navPoint.AppendChild((XmlNode)navLabel).AppendChild((XmlNode)content);
+
+            //apend the navPoint of the chapter to the navMap
+            return (XmlNode)navPoint;
         }
     }
 }
