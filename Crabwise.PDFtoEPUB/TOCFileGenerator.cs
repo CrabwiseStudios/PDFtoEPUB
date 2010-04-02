@@ -9,86 +9,77 @@ namespace Crabwise.PDFtoEPUB
     {
         public static byte[] GetTOCFile(ConversionOptions options)
         {
-            XmlDocument tocxml = new XmlDocument();
+            StringBuilder tocBuilder = new StringBuilder();
 
-            //ncx, the root element
-            tocxml.LoadXml(@"<?xml version=""1.0"" encoding=""UTF-8""?><ncx xmlns=""http://www.daisy.org/z3986/2005/ncx/"" version=""2005-1""></ncx>");
-            
+            tocBuilder.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+
+            //ncx
+            tocBuilder.AppendLine("<ncx xmlns=\"http://www.daisy.org/z3986/2005/ncx/\" version=\"2005-1\">");
+
             //ncx/head
-            XmlElement head = tocxml.CreateElement("head");
-            
-            //ncx/head/dtb:uid
-            XmlElement uid = tocxml.CreateElement("meta");
-            uid.SetAttribute("name", "dtb:uid");
-            uid.SetAttribute("content", System.Guid.NewGuid().ToString());
+            tocBuilder.AppendLine("<head>");
 
-            //ncx/head/dtb:depth
-            XmlElement depth = tocxml.CreateElement("meta");
-            depth.SetAttribute("name", "dtb:depth");
-            depth.SetAttribute("content", "1");
+            //ncx/head/meta(s)
+            tocBuilder.AppendFormat("<meta name=\"dtb:uid\" content=\"{0}\"/>", System.Guid.NewGuid().ToString());
+            tocBuilder.AppendFormat("<meta name=\"dtb:depth\" content=\"{0}\"/>", 1);
+            tocBuilder.AppendFormat("<meta name=\"dtb:totalPageCount\" content=\"{0}\"/>", 0);
+            tocBuilder.AppendFormat("<meta name=\"dtb:maxPageNumber\" content=\"{0}\"/>", 0);
+            //end /ncx/head/meta(s)
 
-            //ncx/head/dtb:totalPageCount
-            XmlElement totalPageCount = tocxml.CreateElement("meta");
-            totalPageCount.SetAttribute("name", "dtb:totalPageCount");
-            totalPageCount.SetAttribute("content", "0");
-
-            //ncx/head/dtb:maxPageNumber
-            XmlElement maxPageNumber = tocxml.CreateElement("meta");
-            maxPageNumber.SetAttribute("name", "dtb:maxPageNumber");
-            maxPageNumber.SetAttribute("content", "0");
-
-            //append the dtb:* elements to the head
-            head.AppendChild((XmlNode)uid).AppendChild((XmlNode)depth).AppendChild((XmlNode)totalPageCount).AppendChild((XmlNode)maxPageNumber);
-
-            //append the head to ncx, the root element
-            tocxml.DocumentElement.AppendChild((XmlNode)head);
+            //end /ncx/head
+            tocBuilder.AppendLine("</head>");
 
             //ncx/docTitle
-            XmlElement docTitle = tocxml.CreateElement("docTitle");
-            docTitle.InnerXml = String.Format("<text>{0}</text>", options.Title);
+            tocBuilder.AppendLine("<docTitle>");
 
-            //append the docTitle element to ncx, the root element
-            tocxml.DocumentElement.AppendChild((XmlNode)docTitle);
+            //ncx/docTitle/text & end
+            tocBuilder.AppendFormat("<text>{0}</text>", options.Title);
+
+            //end /ncx/docTitle/text
+            tocBuilder.AppendLine("</docTitle>");
 
             //ncx/navMap
-            XmlElement navMap = tocxml.CreateElement("navMap");
+            tocBuilder.AppendLine("<navMap>");
             
-            //title page
-            navMap.AppendChild(GenerateNavPoint(tocxml, "Title Page", 1, "title_page.xhtml"));
 
+            //ncx/navMap/navPoint(s)
+            //title page
+            tocBuilder.AppendLine(GenerateNavPoint("Title Page", 1, "title_page.xhtml"));
             foreach (Chapter chapter in options.Chapters)
             {
+                //chapters
                 //need the +1 because the title page isn't included in the chapter list
-                navMap.AppendChild(GenerateNavPoint(tocxml, chapter.ChapterTitle, chapter.ChapterNumber + 1, chapter.EmbeddedTitle));
+                tocBuilder.AppendLine(GenerateNavPoint(chapter.ChapterTitle, chapter.ChapterNumber + 1, chapter.EmbeddedTitle));
             }
+            //end /ncx/navMap/navPoint(s)
 
-            //append the navMap to ncx, the root element
-            tocxml.DocumentElement.AppendChild((XmlNode)navMap);
+            //end /ncx/navMap
+            tocBuilder.AppendLine("</navMap>");
+            //end /ncx
+            tocBuilder.AppendLine("</ncx>");
 
             //return the xml in UTF8 encoding
-            return System.Text.Encoding.UTF8.GetBytes(tocxml.ToString());
+            return Encoding.ASCII.GetBytes(tocBuilder.ToString());
         }
 
-        static XmlNode GenerateNavPoint(XmlDocument ParentXmlDoc, string Title, int PlayOrder, string ContentSrc)
+        static string GenerateNavPoint(string Title, int PlayOrder, string ContentSrc)
         {
-            //ncx/navMap/navPoint
-            XmlElement navPoint = ParentXmlDoc.CreateElement("navPoint");
-            navPoint.SetAttribute("id", Title.ToLower());
-            navPoint.SetAttribute("playOrder", PlayOrder.ToString());
+            StringBuilder navPointBuilder = new StringBuilder();
 
-            //ncx/navMap/navPoint/navLabel
-            XmlElement navLabel = ParentXmlDoc.CreateElement("navLabel");
-            navLabel.InnerXml = String.Format("<text>{0}</text>", Title);
+            //navPoint
+            navPointBuilder.AppendFormat("<navPoint id=\"{0}\" playOrder=\"{1}\">", Title.ToLower(), PlayOrder.ToString());
+            //navPoint/navLabel
+            navPointBuilder.AppendLine("<navLabel>");
+            //navPoint/navLabel/text & end
+            navPointBuilder.AppendFormat("<text>{0}</text>", Title);
+            //end /navPoint/navLabel
+            navPointBuilder.AppendLine("</navLabel>");
+            //navPoint/content & end
+            navPointBuilder.AppendFormat("<content src=\"{0}\"/>", ContentSrc);
+            //end /navPoint
+            navPointBuilder.AppendLine("</navPoint>");
 
-            //ncx/navMap/navPoint/content
-            XmlElement content = ParentXmlDoc.CreateElement("content");
-            content.SetAttribute("src", ContentSrc);
-
-            //append the navLabel element and the content element to the navPoint element for the chapter
-            navPoint.AppendChild((XmlNode)navLabel).AppendChild((XmlNode)content);
-
-            //apend the navPoint of the chapter to the navMap
-            return (XmlNode)navPoint;
+            return navPointBuilder.ToString();
         }
     }
 }
