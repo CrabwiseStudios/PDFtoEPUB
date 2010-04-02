@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Xml;
 
 namespace Crabwise.PDFtoEPUB
 {
@@ -20,7 +19,7 @@ namespace Crabwise.PDFtoEPUB
             tocBuilder.AppendLine("<head>");
 
             //ncx/head/meta(s)
-            tocBuilder.AppendFormat("<meta name=\"dtb:uid\" content=\"{0}\"/>", System.Guid.NewGuid().ToString());
+            tocBuilder.AppendFormat("<meta name=\"dtb:uid\" content=\"{0}\"/>", options.ID);
             tocBuilder.AppendFormat("<meta name=\"dtb:depth\" content=\"{0}\"/>", 1);
             tocBuilder.AppendFormat("<meta name=\"dtb:totalPageCount\" content=\"{0}\"/>", 0);
             tocBuilder.AppendFormat("<meta name=\"dtb:maxPageNumber\" content=\"{0}\"/>", 0);
@@ -58,7 +57,7 @@ namespace Crabwise.PDFtoEPUB
             //end /ncx
             tocBuilder.AppendLine("</ncx>");
 
-            //return the xml in UTF8 encoding
+            //return the xml in ASCII encoding
             return Encoding.ASCII.GetBytes(tocBuilder.ToString());
         }
 
