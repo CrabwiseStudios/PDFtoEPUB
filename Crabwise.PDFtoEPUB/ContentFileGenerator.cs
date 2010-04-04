@@ -56,7 +56,7 @@ namespace Crabwise.PDFtoEPUB
             //add the images to the manifest
             for (int imgi = 0; imgi < options.Images.Count; imgi++)
             {
-                //example id: img01, img19
+                //example id: img001, img019, img456
                 contentBuilder.AppendLine(GenerateItem("img" + imgi.ToString().PadLeft(3, '0'), options.Images[imgi], "imge/jpeg"));
             }
 
@@ -67,7 +67,6 @@ namespace Crabwise.PDFtoEPUB
             contentBuilder.AppendLine("<spine toc=\"ncx\">");
 
             //package/spine/itemref(s)
-
             //add the title page to the spine
             contentBuilder.AppendLine(GenerateItemRef("titlepage"));
 
